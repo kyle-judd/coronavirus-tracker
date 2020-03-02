@@ -6,10 +6,16 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+import javax.annotation.PostConstruct;
+
+import org.springframework.stereotype.Service;
+
+@Service
 public class CoronaVirusDataService {
 	
-	private static String VIRUS_DATA_URL = "https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
+	private static String VIRUS_DATA_URL = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
 	
+	@PostConstruct
 	public void fetchVirusData() throws IOException, InterruptedException {
 		
 		HttpClient client = HttpClient.newHttpClient();
