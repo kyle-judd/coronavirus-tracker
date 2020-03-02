@@ -48,4 +48,14 @@ public class CoronaVirusDataService {
 		
 		allStats = newStats;
 	}
+
+	public List<LocationStats> getAllStats() {
+		return allStats;
+	}
+
+	public void setAllStats(List<LocationStats> allStats) {
+		this.allStats = allStats;
+	}
+	
+	
 }
